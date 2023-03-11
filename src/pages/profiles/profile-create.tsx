@@ -2,6 +2,7 @@ import { MainNavigation } from "@/components/main-nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function ProfileCreate() {
   return (
@@ -58,6 +59,11 @@ export default function ProfileCreate() {
 
               <div>
                 <div className=" text-2xl  mb-5 font-semibold">Обо мне</div>
+                <Textarea>sime</Textarea>
+                <div className="flex pt-5 gap-3 justify-end">
+                  <Button variant="ghost">Назад</Button>
+                  <Button>Далее</Button>
+                </div>
               </div>
             </div>
           </div>
