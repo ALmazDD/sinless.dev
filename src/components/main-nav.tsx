@@ -1,15 +1,28 @@
 "use client";
 
-import { Bell, ChevronDown, Star } from "lucide-react";
+import {
+  Bell,
+  Briefcase,
+  ChevronDown,
+  Gavel,
+  Landmark,
+  LogOut,
+  Mails,
+  Menu,
+  Settings,
+  Star,
+  User,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import Logo from "@/assets/logo.svg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -25,6 +38,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils/cn";
+import { Separator } from "./ui/separator";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -42,77 +56,153 @@ const components: { title: string; href: string; description: string }[] = [
 export function MainNavigation() {
   return (
     <>
-      <div className="bg-white flex items-center justify-between px-12 py-7 border border-b-slate-100">
-        <Link href="/" className="flex items-end justify-center">
-          <Image src={Logo} alt="logo" />
-          <span className="pl-5 w-60 text-xs text-slate-400">
-            Инструмент для предпринимателей по поиску и работе с партнёрами
-          </span>
-        </Link>
-        <NavigationMenu className="flex flex-initial">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Проекты
-                </NavigationMenuLink>
-              </Link>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Профиль
-                </NavigationMenuLink>
-              </Link>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Чаты
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Аукционы</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px] ">
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
+      <div className="py-8 border border-b-2 border-slate-100	">
+        <div className="max-w-[90%] m-auto flex justify-between items-center">
+          <Link
+            href="/"
+            className="flex flex-col gap-3 sm:flex-row sm:items-end"
+          >
+            <Image src={Logo} className="h-6 md:h-10 w-fit" alt="logo" />
+            <p className=" w-32 md:w-56 text-[7px] md:text-xs text-slate-500 dark:text-slate-400">
+              Инструмент для предпринимателей по поиску и работе с партнёрами
+            </p>
+          </Link>
+          <div className=" relative">
+            <NavigationMenu className="hidden lg:flex">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
                     >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="flex gap-10">
-          <Button variant="ghost">
-            <Link href="/">
-              <Star width={25} height={25} />
-            </Link>
-          </Button>
-          <Button variant="ghost">
-            <Link href="/">
-              <Bell width={25} height={25} />
-            </Link>
-          </Button>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-3">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-              </Avatar>
-              <span>Nurgali Almaz</span>
-              <ChevronDown />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="min-w-[12rem]">
-              <DropdownMenuLabel>Мой аккаунт</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Настройки</DropdownMenuItem>
-              <DropdownMenuItem>Подписки</DropdownMenuItem>
-              <DropdownMenuItem>Выйти</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                      Проекты
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Профиль
+                    </NavigationMenuLink>
+                  </Link>
+                  <Link href="/docs" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Чаты
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Аукционы</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+
+          <div className="flex">
+            <div className="flex mr-6">
+              <Separator orientation="vertical" />
+              <Button variant="ghost">
+                <Link href="/">
+                  <Star />
+                </Link>
+              </Button>
+              <Separator orientation="vertical" />
+              <Button variant="ghost">
+                <Link href="/">
+                  <Bell />
+                </Link>
+              </Button>
+              <Separator orientation="vertical" />
+            </div>
+            <div className="hidden lg:flex">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex gap-3 items-center">
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                  </Avatar>
+                  <span>Nurgali Almaz</span>
+                  <ChevronDown />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="min-w-[12rem]">
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Настройки</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Выйти</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+            <div>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="lg:hidden" asChild>
+                  <Button variant="outline">
+                    <Menu width={18} height={12} />
+                  </Button>
+                </DropdownMenuTrigger>
+                <div>
+                  <DropdownMenuContent className="w-56 lg:hidden">
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Настройки</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem>
+                        <Briefcase className="mr-2 h-4 w-4" />
+                        <span>Проекты</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <User className="mr-2 h-4 w-4" />
+                        <span>Профиль</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem>
+                        <Mails className="mr-2 h-4 w-4" />
+                        <span>Чаты</span>
+                      </DropdownMenuItem>
+                      <DropdownMenuGroup>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuLabel>Аукционы</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <Landmark className="mr-2 h-4 w-4" />
+                          <span>Продажи</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Gavel className="mr-2 h-4 w-4" />
+                          <span>Торги</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuGroup>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Выйти</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </div>
+              </DropdownMenu>
+            </div>
+          </div>
         </div>
       </div>
     </>

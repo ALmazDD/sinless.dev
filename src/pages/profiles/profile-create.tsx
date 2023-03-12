@@ -1,8 +1,7 @@
 import { MainNavigation } from "@/components/main-nav";
+import GeneralProfileData from "@/components/profiles/general-profile-data";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function ProfileCreate() {
   return (
@@ -13,11 +12,11 @@ export default function ProfileCreate() {
         <div className="container max-w-screen-xl mx-auto px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Портфолио /</span>
-            Создание портфолио
+            Создание профиля
           </h1>
 
           <div className="flex justify-between items-baseline">
-            <h1 className="text-5xl pt-7  font-extrabold	">Портфолио </h1>
+            <h1 className="text-5xl pt-7  font-extrabold	">Профиль</h1>
 
             <div className="flex gap-3">
               <Button variant="subtle">Отмена</Button>
@@ -38,32 +37,11 @@ export default function ProfileCreate() {
               <div>Соцсети</div>
             </div>
             <div className=" container max-w-screen-sm m-auto pt-8">
-              <div className="mb-7">
-                <div className=" text-2xl  mb-5 font-semibold">
-                  Название портфолио
-                </div>
-                <Input placeholder="Юрист" className=" w-6/12" />
-              </div>
+              <GeneralProfileData />
 
-              <div className="mb-7">
-                <div className=" text-2xl  mb-5 font-semibold">
-                  Основаная информация о вас
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="Cтрана" className=" " />
-                  <Input placeholder="Профессия" className="" />
-                  <Input placeholder="Город" className=" " />
-                  <Input placeholder="Сфера деятельности" className=" " />
-                </div>
-              </div>
-
-              <div>
-                <div className=" text-2xl  mb-5 font-semibold">Обо мне</div>
-                <Textarea>sime</Textarea>
-                <div className="flex pt-5 gap-3 justify-end">
-                  <Button variant="ghost">Назад</Button>
-                  <Button>Далее</Button>
-                </div>
+              <div className="flex pt-5 pb-7 gap-3 justify-end">
+                <Button variant="ghost">Назад</Button>
+                <Button>Далее</Button>
               </div>
             </div>
           </div>
