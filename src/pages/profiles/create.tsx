@@ -3,7 +3,7 @@ import GeneralProfileData from "@/components/profiles/general-profile-data";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-export default function ProfileCreate() {
+export default function Create() {
   return (
     <>
       <div className="bg-slate-50 h-screen">

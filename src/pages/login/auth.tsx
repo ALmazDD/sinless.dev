@@ -1,44 +1,44 @@
-import { Flower, Mail } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/assets/logo.svg";
+import Link from "next/link";
+import LogoWhite from "@/assets/logo-white.svg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 export default function Auth() {
   return (
     <>
-      <div>
-        <div className="grid md:grid-cols-2">
-          <div className="bg-white h-screen">
-            <div className="flex flex-col gap-3 w-max h-screen m-auto items-start justify-center">
-              <div className="flex flex-col gap-3">
-                <Image src={Logo} alt="logo" />
-                <h1>Добро пожаловать !</h1>
-                <p className="lg:hidden">Воплощайте свои мечты в жизнь!</p>
-              </div>
-              <form className="flex flex-col gap-3">
-                <p>Email</p>
-                <Input placeholder="Введите ваш email" />
-                <Button>Войти</Button>
-                <Button variant="outline">
-                  <Mail className="mr-3" /> Войти при помощи Gmail
-                </Button>
-              </form>
-            </div>
-          </div>
-          <div className="hidden md:flex bg-gradient-to-r from-lime-500 to-lime-600  rounded-l-3xl h-screen">
-            <div className="flex flex-col gap-3 w-max h-screen m-auto items-start justify-center">
-              <div className="flex flex-col gap-3">
-                <Flower height={70} width={70} />
-                <h1 className="text-[60px] text-slate-200 font-semibold">
-                  Начните воплощать свои <br />
-                  идеи в реальность !
-                </h1>
-                <p className=" text-lg">
-                  Создайте бесплатную учетную запись и получите полный доступ ко
-                  всем функциям <br /> в течение 30 дней. Кредитная карта не
-                  требуется. Приступайте к работе через 2 минуты.
-                </p>
+      <div className=" bg-slate-600 bg-no-repeat bg-auth bg-cover bg-center  h-screen">
+        <div className="flex items-end justify-between md:justify-start gap-4 max-w-[90%] m-auto pt-20">
+          <Image src={LogoWhite} alt="some" className="w-24 md:w-40" />
+          <p className="text-slate-700 md:text-[#A6AEB7] text-[9px] md:text-sm">
+            Инструмент для предпринимателей <br /> по поиску и работе с
+            партнёрами
+          </p>
+        </div>
+        <div className="flex items-center justify-center h-[55%] md:h-[70%]">
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col gap-4 w-auto md:w-[425px] bg-white p-6 rounded-md shadow-md">
+              <h1 className="text-xs md:text-sm">Вход на платформу</h1>
+              <Input
+                type="email"
+                className="text-xs md:text-sm"
+                placeholder="Введите ваш email"
+              />
+              <div className="flex flex-col gap-4 ">
+                <Link href="profiles/create" className="">
+                  <Button className="bg-slate-900 hover:bg-slate-700 min-w-full text-xs md:text-sm">
+                    Войти
+                  </Button>
+                </Link>
+
+                <Link href="/">
+                  <Button
+                    className="text-xs md:text-sm min-w-full"
+                    variant="outline"
+                  >
+                    Войти с Google
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

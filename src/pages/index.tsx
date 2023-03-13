@@ -1,11 +1,9 @@
-import Link from "next/link";
-import { MainNavigation } from "@/components/main-nav";
+import Auth from "./login/auth";
 
 export default function Home() {
   return (
     <>
-      <MainNavigation />
-      <Link href="/profiles/profile-create">test</Link>
+      <Auth />
     </>
   );
 }
