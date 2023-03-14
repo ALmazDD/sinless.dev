@@ -27,7 +27,7 @@ module.exports = {
       },
       backgroundImage: {
         auth: "url('../assets/auth.svg')",
-      }
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
