@@ -47,9 +47,9 @@ const components: { title: string; href: string; description: string }[] = [
     description: "Продаете за сумму поставщик дает свою ценну более ниже",
   },
   {
-    title: "Торги",
-    href: "/docs/primitives/hover-card",
-    description: "На торгах вы выставляете лот и продаете чем дороже",
+    title: "Закупки",
+    href: "/auction/procurement",
+    description: "На закупках вы выставляете лот и продаете чем дороже",
   },
 ];
 
