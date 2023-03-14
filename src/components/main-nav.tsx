@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 export function MainNavigation() {
   return (
     <>
-      <div className="py-8 border border-b-2 border-slate-100	">
+      <div className=" bg-white py-8 border border-b-2 border-slate-100	">
         <div className="max-w-[90%] m-auto flex justify-between items-center">
           <Link
             href="/"

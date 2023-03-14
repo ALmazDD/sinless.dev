@@ -5,6 +5,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      scale: {
+        "-100": "-1",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
@@ -23,7 +26,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'auth': "url('../assets/auth.svg')"
+        auth: "url('../assets/auth.svg')",
       }
     },
   },
