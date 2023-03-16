@@ -78,7 +78,7 @@ export function MainNavigation() {
                       Проекты
                     </NavigationMenuLink>
                   </Link>
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="/profiles/view" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >

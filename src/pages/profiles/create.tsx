@@ -19,7 +19,7 @@ export default function Create() {
         <MainNavigation />
         <div className="container max-w-screen-xl mx-auto px-5 pt-8">
           <h1 className="text-sm">
-            <span className="text-slate-300">Портфолио /</span>
+            <span className="text-slate-300">Профиль /</span>
             Создание профиля
           </h1>
 
