@@ -71,14 +71,14 @@ export function MainNavigation() {
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="/projects/all" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
                       Проекты
                     </NavigationMenuLink>
                   </Link>
-                  <Link href="/profiles/view" legacyBehavior passHref>
+                  <Link href="/profiles/all" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >

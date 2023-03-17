@@ -2,7 +2,7 @@ import { ChevronRight, Star } from "lucide-react";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 
-export default function ProcurementTest() {
+export function ProcurementTest() {
   return (
     <div className="bg-white w-[400px] border border-slate-200 rounded-2xl">
       <div className="px-4 py-4">

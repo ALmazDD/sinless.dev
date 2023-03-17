@@ -3,7 +3,7 @@ import {
   LayoutGrid,
   Search,
 } from "lucide-react";
-import ProcurementTest from "@/components/auction/procurement-test";
+import { ProcurementTest } from "@/components/auction/procurement-test";
 import { MainNavigation } from "@/components/main-nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

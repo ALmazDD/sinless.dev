@@ -1,8 +1,21 @@
-import { Circle, Mail, Trash2 } from "lucide-react";
+import { Circle, Mail, Power, Trash2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Test from "@/assets/testAva.jpg";
+import Badge from "@/assets/Vector.svg";
 import { MainNavigation } from "@/components/main-nav";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -27,9 +40,23 @@ export default function View() {
             <Button className="bg-slate-700 hover:bg-black">
               Редактировать
             </Button>
-            <Button variant="ghost" className="border-2">
-              <Trash2 />
-            </Button>
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Trash2 />
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Удалить портфолио?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    Восстановить портфолио будет невозможно
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Отмена</AlertDialogCancel>
+                  <AlertDialogAction>Удалить</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         </div>
 
@@ -97,7 +124,7 @@ export default function View() {
                   <TabsTrigger value="sertification">
                     Сертефикаты и навыки
                   </TabsTrigger>
-                  <TabsTrigger value="social">Соцсети</TabsTrigger>
+                  <TabsTrigger value="social">Проекты</TabsTrigger>
                 </TabsList>
 
                 {/* job experience */}
@@ -224,8 +251,39 @@ export default function View() {
                     value="sertification"
                   >
                     <div>
-                      <div className="w-full bg-red-300">
-                        <p className="">Сертефикаты</p>
+                      <p className="text-slate-400 font-semibold text-xl mb-6">
+                        Сертефикаты
+                      </p>
+                      <div className="w-full bg-slate-100 rounded-xl pt-4 pb-6">
+                        <div className="flex flex-col justify-center items-center ">
+                          <Image
+                            src={Badge}
+                            alt="Sertificate"
+                            className="m-auto"
+                          />
+                          <p className="font-semibold text-xl">
+                            Онлайн-курс менеджера по туризму от «Поехали с нами»
+                          </p>
+                          <p className=" font-normal text-sm">
+                            За успешное завершение онлайн-курса "Менеджер по
+                            туризму"
+                          </p>
+                          <Link href="/">
+                            <p className="text-sky-500 font-medium text-sm">
+                              Смотреть сертификат
+                            </p>
+                          </Link>
+                        </div>
+                      </div>
+                      <p className="text-slate-400 font-semibold text-xl mt-12">
+                        Навыки
+                      </p>
+
+                      <div className="flex mt-8">
+                        <div className="flex gap-3 px-6 py-4 bg-slate-100 rounded-xl">
+                          <Power />
+                          <p> Работа с Битрикс24</p>
+                        </div>
                       </div>
                     </div>
                   </TabsContent>
@@ -237,30 +295,7 @@ export default function View() {
                     className="h-[500px] w-[700px] border-none "
                     value="social"
                   >
-                    <div className="flex flex-col">
-                      <div className=" text-2xl  mb-5 font-semibold">
-                        Социальные сети
-                      </div>
-                      <div className="flex gap-3 items-center mb-7">
-                        <Circle />
-                        <Input placeholder="Ссылка на Telegram" className="" />
-                      </div>
-                      <div className="flex gap-3 items-center mb-7">
-                        <Circle />
-                        <Input placeholder="Ссылка на LinkedIn" className="" />
-                      </div>
-                      <div className="flex gap-3 items-center mb-7">
-                        <Circle />
-                        <Input placeholder="Ссылка на Instagram" className="" />
-                      </div>
-                      <div className="flex gap-3 items-center mb-7">
-                        <Circle />
-                        <Input
-                          placeholder="Ссылка на HeadHunter"
-                          className=""
-                        />
-                      </div>
-                    </div>
+                    <div className="flex flex-col" />
                   </TabsContent>
                 </div>
               </Tabs>
