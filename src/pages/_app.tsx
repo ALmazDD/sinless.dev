@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Inter } from "@next/font/google";
 import type { AppProps } from "next/app";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["cyrillic"],
   variable: "--font-inter",
 });

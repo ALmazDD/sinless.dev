@@ -42,12 +42,12 @@ import { Separator } from "./ui/separator";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Продажи",
+    title: "Аукционы",
     href: "/docs/primitives/alert-dialog",
     description: "Продаете за сумму поставщик дает свою ценну более ниже",
   },
   {
-    title: "Закупки",
+    title: "Тендера",
     href: "/auction/procurement",
     description: "На закупках вы выставляете лот и продаете чем дороже",
   },
@@ -71,14 +71,14 @@ export function MainNavigation() {
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <Link href="/projects/all" legacyBehavior passHref>
+                  <Link href="/projects/" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
                       Проекты
                     </NavigationMenuLink>
                   </Link>
-                  <Link href="/profiles/all" legacyBehavior passHref>
+                  <Link href="/profiles/" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
@@ -135,12 +135,12 @@ export function MainNavigation() {
                   <Avatar>
                     <AvatarImage src="https://github.com/shadcn.png" />
                   </Avatar>
-                  <span>Nurgali Almaz</span>
+                  <span>Алмаз Нургали</span>
                   <ChevronDown />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="min-w-[12rem]">
                   <DropdownMenuGroup>
-                    <DropdownMenuItem>
+                    <DropdownMenuItem className=" text-slate-900 text-sm font-sans">
                       <Settings className="mr-2 h-4 w-4" />
                       <span>Настройки</span>
                     </DropdownMenuItem>

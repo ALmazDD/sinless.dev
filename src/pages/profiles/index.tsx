@@ -1,11 +1,11 @@
-import { File, PlusIcon } from "lucide-react";
+import { Files, Plus } from "lucide-react";
 import Link from "next/link";
 import { MainNavigation } from "@/components/main-nav";
 import { NoProfiles } from "@/components/profiles/no-profiles";
 import { Button } from "@/components/ui/button";
 
 export default function All() {
-  const isTrue = false;
+  const isTrue = true;
   return (
     <>
       <div className="bg-slate-50 h-screen">
@@ -20,13 +20,13 @@ export default function All() {
               variant="outline"
               className="flex gap-2 bg-slate-900 text-white"
             >
-              <PlusIcon /> Создать профиль
+              <Plus /> Создать профиль
             </Button>
           </div>
           {isTrue ? (
             <Link href="./view">
               <div className="max-w-[400px] bg-white text-xl font-semibold flex flex-col items-center justify-center py-9 border-[1px] rounded-lg">
-                <File />
+                <Files />
                 <p className="w-[203px] text-center">Консультационные услуги</p>
               </div>
             </Link>
