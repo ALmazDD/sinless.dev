@@ -24,7 +24,7 @@ export default function All() {
             </Button>
           </div>
           {isTrue ? (
-            <Link href="./view">
+            <Link href="profiles/view">
               <div className="max-w-[400px] bg-white text-xl font-semibold flex flex-col items-center justify-center py-9 border-[1px] rounded-lg">
                 <Files />
                 <p className="w-[203px] text-center">Консультационные услуги</p>
