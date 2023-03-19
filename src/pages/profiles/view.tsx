@@ -122,7 +122,7 @@ export default function View() {
                   <TabsTrigger value="job">Опыт работы</TabsTrigger>
                   <TabsTrigger value="degree">Образование</TabsTrigger>
                   <TabsTrigger value="sertification">
-                    Сертефикаты и навыки
+                    Сертификаты и навыки
                   </TabsTrigger>
                   <TabsTrigger value="social">Проекты</TabsTrigger>
                 </TabsList>
