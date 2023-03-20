@@ -24,7 +24,7 @@ export default function Create() {
           </h1>
 
           <div className="flex justify-between items-baseline">
-            <h1 className="text-5xl pt-7  font-extrabold	">Профиль</h1>
+            <h1 className="text-5xl pt-7  font-extrabold	">{/* Профиль */}</h1>
 
             <div className="flex gap-3">
               <Button variant="subtle">Отмена</Button>
@@ -32,7 +32,7 @@ export default function Create() {
             </div>
           </div>
 
-          <div className="bg-white">
+          <div className="bg-white shadow-sm rounded-lg">
             <Tabs defaultValue="general" className="">
               <TabsList className="flex justify-around text-lg font-semibold bg-white text-slate-300 mt-11 py-9 border border-slate-100 border-b-1">
                 <TabsTrigger value="general">Общие данные</TabsTrigger>
