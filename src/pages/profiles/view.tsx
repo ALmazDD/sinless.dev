@@ -43,16 +43,20 @@ export default function View() {
               <AlertDialogTrigger>
                 <Trash2 />
               </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Удалить портфолио?</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    Восстановить портфолио будет невозможно
+              <AlertDialogContent className="flex flex-col justify-center items-center">
+                <AlertDialogHeader className="mb-3">
+                  <AlertDialogTitle className="text-center">
+                    Удалить профиль?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className="text-center text-slate-900">
+                    Восстановить профиль будет невозможно
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Отмена</AlertDialogCancel>
-                  <AlertDialogAction>Удалить</AlertDialogAction>
+                  <AlertDialogAction className=" bg-rose-500 hover:bg-rose-700">
+                    Удалить
+                  </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>

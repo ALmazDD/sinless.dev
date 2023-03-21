@@ -17,7 +17,7 @@ export default function Create() {
     <>
       <div className="bg-slate-50 h-screen">
         <MainNavigation />
-        <div className="container max-w-screen-xl mx-auto px-5 pt-8">
+        <div className="container max-w-screen-xl mx-auto pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профиль /</span>
             Создание профиля
@@ -33,15 +33,17 @@ export default function Create() {
           </div>
 
           <div className="bg-white shadow-sm rounded-lg">
-            <Tabs defaultValue="general" className="">
-              <TabsList className="flex justify-around text-lg font-semibold bg-white text-slate-300 mt-11 py-9 border border-slate-100 border-b-1">
-                <TabsTrigger value="general">Общие данные</TabsTrigger>
-                <TabsTrigger value="job">Работа</TabsTrigger>
-                <TabsTrigger value="degree">Образование</TabsTrigger>
-                <TabsTrigger value="sertification">
-                  Сертефикаты и навыки
-                </TabsTrigger>
-                <TabsTrigger value="social">Соцсети</TabsTrigger>
+            <Tabs defaultValue="general">
+              <TabsList className="flex  bg-white mt-11 py-9 border border-slate-100 border-b-1">
+                <div className="overflow-x-auto flex flex-row flex-nowrap gap-10 md:w-full md:justify-around">
+                  <TabsTrigger value="general">Общие данные</TabsTrigger>
+                  <TabsTrigger value="job">Работа</TabsTrigger>
+                  <TabsTrigger value="degree">Образование</TabsTrigger>
+                  <TabsTrigger value="sertification">
+                    Сертефикаты и навыки
+                  </TabsTrigger>
+                  <TabsTrigger value="social">Соцсети</TabsTrigger>
+                </div>
               </TabsList>
 
               {/* General info */}

@@ -48,7 +48,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Тендера",
-    href: "/auction/procurement",
+    href: "/auctions/procurement",
     description: "На закупках вы выставляете лот и продаете чем дороже",
   },
 ];
@@ -56,21 +56,21 @@ const components: { title: string; href: string; description: string }[] = [
 export function MainNavigation() {
   return (
     <>
-      <div className=" bg-white h-24 border border-b-2 border-slate-100	">
+      <div className=" bg-white h-20 border border-b-2 border-slate-100	">
         <div className="max-w-[95%] m-auto flex justify-between items-center h-full">
           <Link
             href="/"
             className="flex flex-col gap-3 sm:flex-row sm:items-end"
           >
             <Image src={Logo} className="h-6 md:h-10 w-fit" alt="logo" />
-            <p className=" w-32 md:w-56 text-[7px] md:text-xs text-slate-500 dark:text-slate-400">
+            <p className="hidden md:flex w-32 md:w-56 text-[7px] md:text-xs text-slate-500 dark:text-slate-400">
               Инструмент для предпринимателей по поиску и работе с партнёрами
             </p>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="flex gap-14">
-              <NavigationMenuItem className="flex gap-14">
+            <NavigationMenuList className="flex gap-5">
+              <NavigationMenuItem className="flex gap-5">
                 <Link href="/projects/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Проекты
@@ -107,7 +107,7 @@ export function MainNavigation() {
           </NavigationMenu>
 
           <div className="flex h-full">
-            <div className="flex gap-4 ">
+            <div className="flex gap-2 md:gap-4  ">
               <Separator orientation="vertical" />
               <div className="flex justify-center items-center h-auto">
                 <Button variant="ghost">
@@ -131,7 +131,7 @@ export function MainNavigation() {
                     <Avatar>
                       <AvatarImage src="https://github.com/shadcn.png" />
                     </Avatar>
-                    <span className=" text-sm font-medium">Алмаз Нургали</span>
+                    <span className="text-sm font-medium">Алмаз Нургали</span>
                     <ChevronDown />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="min-w-[12rem]">

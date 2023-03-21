@@ -22,7 +22,7 @@ export default function All() {
             <h1 className="text-5xl pt-7  font-extrabold">Проекты</h1>
 
             <div className="flex items-center gap-3">
-              <Input type="search" placeholder="Искать по закупкам" />
+              <Input type="search" placeholder="Поиск" />
               <Button type="submit" variant="ghost">
                 <Search />
               </Button>
@@ -34,7 +34,7 @@ export default function All() {
               </Button>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 gap-6">
             <ProjectTest />
             <ProjectTest />
             <ProjectTest />

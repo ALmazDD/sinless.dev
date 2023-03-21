@@ -19,8 +19,10 @@ export default function Procurement() {
             <span className="text-slate-300">Профиль /</span>
             Закупки
           </h1>
-          <div className="flex justify-between items-baseline mb-16">
-            <h1 className="text-5xl pt-7  font-extrabold	">Закупки</h1>
+          <div className="flex flex-col justify-end items-end md:flex-row gap-4 md:justify-between md:items-baseline my-5 md:mb-16">
+            <h1 className="text-5xl pt-7  font-extrabold hidden md:flex	">
+              Закупки
+            </h1>
 
             <div className="flex items-center gap-3">
               <Input type="search" placeholder="Искать по закупкам" />
@@ -35,7 +37,7 @@ export default function Procurement() {
               </Button>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProcurementTest />
             <ProcurementTest />
             <ProcurementTest />
