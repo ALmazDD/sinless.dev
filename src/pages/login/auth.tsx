@@ -1,8 +1,5 @@
-"use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import Google from "@/assets/google.svg";
@@ -33,7 +30,7 @@ export default function Auth() {
 
   return (
     <>
-      <form onSubmit={() => signIn()}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="bg-auth bg-no-repeat bg-cover bg-center h-screen">
           <div className="max-w-[90%] m-auto flex items-end justify-between lg:justify-start gap-4 pt-20">
             <Image src={LogoWhite} alt="some" className="w-24 md:w-40" />
@@ -70,7 +67,7 @@ export default function Auth() {
                 </Button>
 
                 <Button
-                  onSubmit={() => signIn()}
+                  onSubmit={handleSubmit(onSubmit)}
                   type="submit"
                   className="flex items-center gap-2 text-xs md:text-sm min-w-full"
                   variant="outline"
