@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 export function NoProfiles() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-8">
+      <div className="flex flex-col items-center justify-center gap-8">
         <Image src={NoProfile} alt="Нет профилей" />
         <p className=" text-2xl font-semibold">У вас нет профиля</p>
         <Button

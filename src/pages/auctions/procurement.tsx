@@ -11,16 +11,16 @@ import { Input } from "@/components/ui/input";
 export default function Procurement() {
   return (
     <>
-      <div className="bg-slate-50 h-screen">
+      <div className="h-screen bg-slate-50">
         <MainNavigation />
 
-        <div className="container max-w-screen-xl mx-auto px-5 pt-8">
+        <div className="container mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профиль /</span>
             Закупки
           </h1>
-          <div className="flex flex-col justify-end items-end md:flex-row gap-4 md:justify-between md:items-baseline my-5 md:mb-16">
-            <h1 className="text-5xl pt-7  font-extrabold hidden md:flex	">
+          <div className="my-5 flex flex-col items-end justify-end gap-4 md:mb-16 md:flex-row md:items-baseline md:justify-between">
+            <h1 className="hidden pt-7  text-5xl font-extrabold md:flex	">
               Закупки
             </h1>
 
@@ -37,7 +37,7 @@ export default function Procurement() {
               </Button>
             </div>
           </div>
-          <div className="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid justify-center gap-6 md:grid-cols-2 lg:grid-cols-3">
             <ProcurementTest />
             <ProcurementTest />
             <ProcurementTest />

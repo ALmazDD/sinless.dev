@@ -22,16 +22,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function View() {
   return (
-    <div className="bg-slate-50 h-screen">
+    <div className="h-screen bg-slate-50">
       <MainNavigation />
-      <div className="container max-w-screen-xl mx-auto pt-7">
+      <div className="container mx-auto max-w-screen-xl pt-7">
         <h1 className="text-sm">
           <span className="text-slate-300">Профиль / </span>
           Консультационные услуги
         </h1>
 
-        <div className="flex justify-between items-baseline mb-11">
-          <h1 className="text-5xl pt-7  font-extrabold	">
+        <div className="mb-11 flex items-baseline justify-between">
+          <h1 className="pt-7 text-5xl  font-extrabold	">
             Консультационные услуги
           </h1>
 
@@ -43,7 +43,7 @@ export default function View() {
               <AlertDialogTrigger>
                 <Trash2 />
               </AlertDialogTrigger>
-              <AlertDialogContent className="flex flex-col justify-center items-center">
+              <AlertDialogContent className="flex flex-col items-center justify-center">
                 <AlertDialogHeader className="mb-3">
                   <AlertDialogTitle className="text-center">
                     Удалить профиль?
@@ -66,11 +66,11 @@ export default function View() {
         <div className="grid grid-cols-10 gap-4 ">
           <div className="col-span-3">
             <div className="h-full bg-white px-6">
-              <div className="flex flex-col justify-center items-center pt-12">
+              <div className="flex flex-col items-center justify-center pt-12">
                 <Image
                   src={Test}
                   alt="Photo by Alvaro Pinot"
-                  className="rounded-md object-cover pb-6 w-auto h-[106px]"
+                  className="h-[106px] w-auto rounded-md object-cover pb-6"
                 />
                 <p className=" text-2xl font-semibold">Almaz Nurgali</p>
                 <p className=" text-sm">Консультационные услуги</p>
@@ -98,7 +98,7 @@ export default function View() {
               <Separator className="mt-4 mb-6" />
               <div className="">
                 <p className=" text-lg font-semibold">Обо мне</p>
-                <p className="text-sm  pt-3">
+                <p className="pt-3  text-sm">
                   2 года 9 месяцев общий стаж работы в сфере туризма. Работала с
                   интересными компаниями, которые являются ведущими турагентами
                   Казахстана
@@ -106,7 +106,7 @@ export default function View() {
               </div>
               <Separator className="mt-4 mb-6" />
               <div>
-                <p className=" text-lg font-semibold mb-4"> Социальные сети</p>
+                <p className=" mb-4 text-lg font-semibold"> Социальные сети</p>
                 <div className="flex  gap-6">
                   <Mail />
                   <Mail />
@@ -118,10 +118,10 @@ export default function View() {
             </div>
           </div>
 
-          <div className="bg-white col-span-7">
+          <div className="col-span-7 bg-white">
             <div className="bg-white">
               <Tabs defaultValue="job" className="">
-                <TabsList className="flex justify-around text-lg font-semibold bg-white text-slate-300 py-9 border border-slate-100 border-b-1">
+                <TabsList className="flex justify-around border border-slate-100 bg-white py-9 text-lg font-semibold text-slate-300">
                   <TabsTrigger value="job">Опыт работы</TabsTrigger>
                   <TabsTrigger value="degree">Образование</TabsTrigger>
                   <TabsTrigger value="sertification">
@@ -145,8 +145,8 @@ export default function View() {
                       <div className="col-span-8">
                         <div>
                           <p className=" text-lg font-semibold">ht.kz</p>
-                          <p className=" text-sm font-normal mb-3">Astana</p>
-                          <p className=" text-sm font-semibold mb-2">
+                          <p className=" mb-3 text-sm font-normal">Astana</p>
+                          <p className=" mb-2 text-sm font-semibold">
                             Менеджер по туризму
                           </p>
                           <p className="text-sm font-normal">
@@ -173,8 +173,8 @@ export default function View() {
                       <div className="col-span-8">
                         <div>
                           <p className=" text-lg font-semibold">ht.kz</p>
-                          <p className=" text-sm font-normal mb-3">Astana</p>
-                          <p className=" text-sm font-semibold mb-2">
+                          <p className=" mb-3 text-sm font-normal">Astana</p>
+                          <p className=" mb-2 text-sm font-semibold">
                             Менеджер по туризму
                           </p>
                           <p className="text-sm font-normal">
@@ -194,19 +194,19 @@ export default function View() {
                 {/* degree */}
                 <div className="w-full">
                   <TabsContent className="border-none" value="degree">
-                    <p className=" text-xl text-slate-400 font-semibold pb-4">
+                    <p className=" pb-4 text-xl font-semibold text-slate-400">
                       Высшее образование
                     </p>
                     <div className="grid grid-cols-10 gap-4">
                       <div className="col-span-3">
-                        <div className=" font-semibold text-lg">2022</div>
+                        <div className=" text-lg font-semibold">2022</div>
                       </div>
                       <div className="col-span-7">
-                        <p className=" font-semibold text-lg">
+                        <p className=" text-lg font-semibold">
                           Казахская Академия Спорта и Туризма
                         </p>
-                        <p className=" font-normal text-sm pb-3"> Алматы</p>
-                        <p className=" font-semibold text-sm">
+                        <p className=" pb-3 text-sm font-normal"> Алматы</p>
+                        <p className=" text-sm font-semibold">
                           Туризм (Магистр туризма)
                         </p>
                       </div>
@@ -214,32 +214,32 @@ export default function View() {
                     <Separator className="mt-4 mb-6" />
                     <div className="grid grid-cols-10 gap-4">
                       <div className="col-span-3">
-                        <div className=" font-semibold text-lg">2022</div>
+                        <div className=" text-lg font-semibold">2022</div>
                       </div>
                       <div className="col-span-7">
-                        <p className=" font-semibold text-lg">
+                        <p className=" text-lg font-semibold">
                           Казахская Академия Спорта и Туризма
                         </p>
-                        <p className=" font-normal text-sm pb-3"> Алматы</p>
-                        <p className=" font-semibold text-sm">
+                        <p className=" pb-3 text-sm font-normal"> Алматы</p>
+                        <p className=" text-sm font-semibold">
                           Туризм (Магистр туризма)
                         </p>
                       </div>
                     </div>
                     <Separator className="mt-4 mb-6" />
-                    <p className=" text-xl text-slate-400 font-semibold pb-4">
+                    <p className=" pb-4 text-xl font-semibold text-slate-400">
                       Повышение квалификации
                     </p>
                     <div className="grid grid-cols-10 gap-4">
                       <div className="col-span-3">
-                        <div className=" font-semibold text-lg">2022</div>
+                        <div className=" text-lg font-semibold">2022</div>
                       </div>
                       <div className="col-span-7">
-                        <p className=" font-semibold text-lg">
+                        <p className=" text-lg font-semibold">
                           Казахская Академия Спорта и Туризма
                         </p>
-                        <p className=" font-normal text-sm pb-3"> Алматы</p>
-                        <p className=" font-semibold text-sm">
+                        <p className=" pb-3 text-sm font-normal"> Алматы</p>
+                        <p className=" text-sm font-semibold">
                           Туризм (Магистр туризма)
                         </p>
                       </div>
@@ -248,42 +248,42 @@ export default function View() {
                 </div>
 
                 {/* sertification */}
-                <div className="flex justify-center w-auto m-auto">
+                <div className="m-auto flex w-auto justify-center">
                   <TabsContent
                     className=" h-[500px] w-[900px] border-none"
                     value="sertification"
                   >
                     <div>
-                      <p className="text-slate-400 font-semibold text-xl mb-6">
+                      <p className="mb-6 text-xl font-semibold text-slate-400">
                         Сертефикаты
                       </p>
-                      <div className="w-full bg-slate-100 rounded-xl pt-4 pb-6">
-                        <div className="flex flex-col justify-center items-center ">
+                      <div className="w-full rounded-xl bg-slate-100 pt-4 pb-6">
+                        <div className="flex flex-col items-center justify-center ">
                           <Image
                             src={Badge}
                             alt="Sertificate"
                             className="m-auto"
                           />
-                          <p className="font-semibold text-xl">
+                          <p className="text-xl font-semibold">
                             Онлайн-курс менеджера по туризму от «Поехали с нами»
                           </p>
-                          <p className=" font-normal text-sm">
+                          <p className=" text-sm font-normal">
                             За успешное завершение онлайн-курса "Менеджер по
                             туризму"
                           </p>
                           <Link href="/">
-                            <p className="text-sky-500 font-medium text-sm">
+                            <p className="text-sm font-medium text-sky-500">
                               Смотреть сертификат
                             </p>
                           </Link>
                         </div>
                       </div>
-                      <p className="text-slate-400 font-semibold text-xl mt-12">
+                      <p className="mt-12 text-xl font-semibold text-slate-400">
                         Навыки
                       </p>
 
-                      <div className="flex mt-8">
-                        <div className="flex gap-3 px-6 py-4 bg-slate-100 rounded-xl">
+                      <div className="mt-8 flex">
+                        <div className="flex gap-3 rounded-xl bg-slate-100 px-6 py-4">
                           <Power />
                           <p> Работа с Битрикс24</p>
                         </div>
@@ -293,7 +293,7 @@ export default function View() {
                 </div>
 
                 {/* social */}
-                <div className="flex justify-center w-auto m-auto">
+                <div className="m-auto flex w-auto justify-center">
                   <TabsContent
                     className="h-[500px] w-[700px] border-none "
                     value="social"

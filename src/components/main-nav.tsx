@@ -56,14 +56,14 @@ const components: { title: string; href: string; description: string }[] = [
 export function MainNavigation() {
   return (
     <>
-      <div className=" bg-white h-20 border border-b-2 border-slate-100	">
-        <div className="max-w-[95%] m-auto flex justify-between items-center h-full">
+      <div className=" h-20 border border-b-2 border-slate-100 bg-white	">
+        <div className="m-auto flex h-full max-w-[95%] items-center justify-between">
           <Link
             href="/"
             className="flex flex-col gap-3 sm:flex-row sm:items-end"
           >
-            <Image src={Logo} className="h-6 md:h-10 w-fit" alt="logo" />
-            <p className="hidden md:flex w-32 md:w-56 text-[7px] md:text-xs text-slate-500 dark:text-slate-400">
+            <Image src={Logo} className="h-6 w-fit md:h-10" alt="logo" />
+            <p className="hidden w-32 text-[7px] text-slate-500 dark:text-slate-400 md:flex md:w-56 md:text-xs">
               Инструмент для предпринимателей по поиску и работе с партнёрами
             </p>
           </Link>
@@ -109,7 +109,7 @@ export function MainNavigation() {
           <div className="flex h-full">
             <div className="flex gap-2 md:gap-4  ">
               <Separator orientation="vertical" />
-              <div className="flex justify-center items-center h-auto">
+              <div className="flex h-auto items-center justify-center">
                 <Button variant="ghost">
                   <Link href="/">
                     <Star />
@@ -117,7 +117,7 @@ export function MainNavigation() {
                 </Button>
               </div>
               <Separator orientation="vertical" />
-              <div className="flex justify-center items-center h-auto">
+              <div className="flex h-auto items-center justify-center">
                 <Button variant="ghost">
                   <Link href="/">
                     <Bell />
@@ -127,7 +127,7 @@ export function MainNavigation() {
               <Separator orientation="vertical" />
               <div className="hidden lg:flex">
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex gap-3 items-center">
+                  <DropdownMenuTrigger className="flex items-center gap-3">
                     <Avatar>
                       <AvatarImage src="https://github.com/shadcn.png" />
                     </Avatar>
@@ -136,7 +136,7 @@ export function MainNavigation() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="min-w-[12rem]">
                     <DropdownMenuGroup>
-                      <DropdownMenuItem className=" text-slate-900 text-sm font-sans">
+                      <DropdownMenuItem className=" font-sans text-sm text-slate-900">
                         <Settings className="mr-2 h-4 w-4" />
                         <span>Настройки</span>
                       </DropdownMenuItem>
@@ -148,7 +148,7 @@ export function MainNavigation() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
-              <div className="flex justify-center items-center h-auto">
+              <div className="flex h-auto items-center justify-center">
                 <DropdownMenu>
                   <DropdownMenuTrigger className="lg:hidden" asChild>
                     <Button variant="outline">
@@ -222,7 +222,7 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+          <p className="text-sm leading-snug text-slate-500 line-clamp-2 dark:text-slate-400">
             {children}
           </p>
         </a>

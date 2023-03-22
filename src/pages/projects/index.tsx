@@ -11,15 +11,15 @@ import { Input } from "@/components/ui/input";
 export default function All() {
   return (
     <div>
-      <div className="bg-slate-50 h-screen">
+      <div className="h-screen bg-slate-50">
         <MainNavigation />
 
-        <div className="container max-w-screen-xl mx-auto px-5 pt-8">
+        <div className="container mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Проекты</span>
           </h1>
-          <div className="flex justify-between items-baseline mb-16">
-            <h1 className="text-5xl pt-7  font-extrabold">Проекты</h1>
+          <div className="mb-16 flex items-baseline justify-between">
+            <h1 className="pt-7 text-5xl  font-extrabold">Проекты</h1>
 
             <div className="flex items-center gap-3">
               <Input type="search" placeholder="Поиск" />

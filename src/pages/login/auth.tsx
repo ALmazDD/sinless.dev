@@ -31,18 +31,18 @@ export default function Auth() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="bg-auth bg-no-repeat bg-cover bg-center h-screen">
-          <div className="max-w-[90%] m-auto flex items-end justify-between lg:justify-start gap-4 pt-20">
+        <div className="h-screen bg-auth bg-cover bg-center bg-no-repeat">
+          <div className="m-auto flex max-w-[90%] items-end justify-between gap-4 pt-20 lg:justify-start">
             <Image src={LogoWhite} alt="some" className="w-24 md:w-40" />
-            <p className="text-slate-700 md:text-[#A6AEB7] text-[9px] md:text-sm">
+            <p className="text-[9px] text-slate-700 md:text-sm md:text-[#A6AEB7]">
               Инструмент для предпринимателей <br /> по поиску и работе c
               партнёрами
             </p>
           </div>
 
-          <div className="flex justify-center items-center h-[55%] md:h-[70%]">
-            <div className="flex flex-col gap-4 md:w-[425px] bg-white p-6 rounded-md shadow-md shadow-slate-700">
-              <h1 className="text-xs md:text-lg font-semibold">
+          <div className="flex h-[55%] items-center justify-center md:h-[70%]">
+            <div className="flex flex-col gap-4 rounded-md bg-white p-6 shadow-md shadow-slate-700 md:w-[425px]">
+              <h1 className="text-xs font-semibold md:text-lg">
                 Вход на платформу
               </h1>
               <Input
@@ -53,7 +53,7 @@ export default function Auth() {
                 {...register("email")}
               />
               {errors.email && (
-                <p className="text-xs text-red-500 mt-2">
+                <p className="mt-2 text-xs text-red-500">
                   {errors.email.message}
                 </p>
               )}
@@ -61,7 +61,7 @@ export default function Auth() {
                 <Button
                   onSubmit={handleSubmit(onSubmit)}
                   type="submit"
-                  className="bg-slate-900 hover:bg-slate-700 min-w-full text-xs md:text-sm"
+                  className="min-w-full bg-slate-900 text-xs hover:bg-slate-700 md:text-sm"
                 >
                   Войти
                 </Button>
@@ -69,7 +69,7 @@ export default function Auth() {
                 <Button
                   onSubmit={handleSubmit(onSubmit)}
                   type="submit"
-                  className="flex items-center gap-2 text-xs md:text-sm min-w-full"
+                  className="flex min-w-full items-center gap-2 text-xs md:text-sm"
                   variant="outline"
                 >
                   <Image

@@ -15,16 +15,16 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Create() {
   return (
     <>
-      <div className="bg-slate-50 h-screen">
+      <div className="h-screen bg-slate-50">
         <MainNavigation />
-        <div className="container max-w-screen-xl mx-auto pt-8">
+        <div className="container mx-auto max-w-screen-xl pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профиль /</span>
             Создание профиля
           </h1>
 
-          <div className="flex justify-between items-baseline">
-            <h1 className="text-5xl pt-7  font-extrabold	">{/* Профиль */}</h1>
+          <div className="flex items-baseline justify-between">
+            <h1 className="pt-7 text-5xl  font-extrabold	">{/* Профиль */}</h1>
 
             <div className="flex gap-3">
               <Button variant="subtle">Отмена</Button>
@@ -32,10 +32,10 @@ export default function Create() {
             </div>
           </div>
 
-          <div className="bg-white shadow-sm rounded-lg">
+          <div className="rounded-lg bg-white shadow-sm">
             <Tabs defaultValue="general">
-              <TabsList className="flex  bg-white mt-11 py-9 border border-slate-100 border-b-1">
-                <div className="overflow-x-auto flex flex-row flex-nowrap gap-10 md:w-full md:justify-around">
+              <TabsList className="mt-11  flex border border-slate-100 bg-white py-9">
+                <div className="flex flex-row flex-nowrap gap-10 overflow-x-auto md:w-full md:justify-around">
                   <TabsTrigger value="general">Общие данные</TabsTrigger>
                   <TabsTrigger value="job">Работа</TabsTrigger>
                   <TabsTrigger value="degree">Образование</TabsTrigger>
@@ -47,20 +47,20 @@ export default function Create() {
               </TabsList>
 
               {/* General info */}
-              <div className="flex justify-center w-auto m-auto">
+              <div className="m-auto flex w-auto justify-center">
                 <TabsContent
                   className="h-[500px] w-[700px] border-none"
                   value="general"
                 >
                   <div className="mb-7">
-                    <div className=" text-2xl  mb-5 font-semibold">
+                    <div className=" mb-5  text-2xl font-semibold">
                       Название профиля
                     </div>
                     <Input placeholder="Юрист" className=" w-6/12" />
                   </div>
 
                   <div className="mb-7">
-                    <div className=" text-2xl  mb-5 font-semibold">
+                    <div className=" mb-5  text-2xl font-semibold">
                       Основаная информация о вас
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -71,7 +71,7 @@ export default function Create() {
                     </div>
                   </div>
                   <div>
-                    <div className=" text-2xl  mb-5 font-semibold">Обо мне</div>
+                    <div className=" mb-5  text-2xl font-semibold">Обо мне</div>
                     <Textarea
                       className="bg-slate-100"
                       placeholder="Что будущему партнеру стоит о вас знать? Что вы умеете делать, что будет полезно другим людям?"
@@ -81,13 +81,13 @@ export default function Create() {
               </div>
 
               {/* job experience */}
-              <div className="flex justify-center w-auto m-auto">
+              <div className="m-auto flex w-auto justify-center">
                 <TabsContent
                   className=" h-[500px] w-[700px] border-none"
                   value="job"
                 >
                   <div className="mb-7">
-                    <div className=" text-2xl  mb-5 font-semibold">
+                    <div className=" mb-5  text-2xl font-semibold">
                       Опыт работы
                     </div>
                     <div className="grid grid-cols-2 gap-4">
@@ -131,14 +131,14 @@ export default function Create() {
               </div>
 
               {/* degree */}
-              <div className="flex justify-center w-auto m-auto">
+              <div className="m-auto flex w-auto justify-center">
                 <TabsContent
                   className=" h-[500px] w-[800px] border-none"
                   value="degree"
                 >
                   <div className="grid grid-cols-2 justify-between gap-20">
                     <div>
-                      <div className=" text-2xl  mb-5 font-semibold">
+                      <div className=" mb-5  text-2xl font-semibold">
                         Образование
                       </div>
                       <div className="flex flex-col gap-5">
@@ -174,7 +174,7 @@ export default function Create() {
                       </div>
                     </div>
                     <div>
-                      <div className=" text-2xl  mb-5 font-semibold">
+                      <div className=" mb-5  text-2xl font-semibold">
                         Повышение квалификации
                       </div>
 
@@ -193,21 +193,21 @@ export default function Create() {
               </div>
 
               {/* sertification */}
-              <div className="flex justify-center w-auto m-auto">
+              <div className="m-auto flex w-auto justify-center">
                 <TabsContent
                   className=" h-[500px] w-[900px] border-none"
                   value="sertification"
                 >
                   <div className="grid grid-cols-2 justify-between gap-20">
                     <div>
-                      <div className=" text-2xl  mb-5 font-semibold">
+                      <div className=" mb-5  text-2xl font-semibold">
                         Сертификаты
                       </div>
                       <div className="flex flex-col gap-5">
                         <div className="flex gap-5">
                           <Input placeholder="Название сертификата" />
                           <Button variant="outline">
-                            <Paperclip className="transform rotate-90 -scale-y-100  " />
+                            <Paperclip className="rotate-90 -scale-y-100" />
                           </Button>
                         </div>
 
@@ -222,7 +222,7 @@ export default function Create() {
                       </div>
                     </div>
                     <div>
-                      <div className=" text-2xl  mb-5 font-semibold">
+                      <div className=" mb-5  text-2xl font-semibold">
                         Навыки
                       </div>
 
@@ -238,28 +238,28 @@ export default function Create() {
               </div>
 
               {/* social */}
-              <div className="flex justify-center w-auto m-auto">
+              <div className="m-auto flex w-auto justify-center">
                 <TabsContent
                   className="h-[500px] w-[700px] border-none "
                   value="social"
                 >
                   <div className="flex flex-col">
-                    <div className=" text-2xl  mb-5 font-semibold">
+                    <div className=" mb-5  text-2xl font-semibold">
                       Социальные сети
                     </div>
-                    <div className="flex gap-3 items-center mb-7">
+                    <div className="mb-7 flex items-center gap-3">
                       <Circle />
                       <Input placeholder="Ссылка на Telegram" className="" />
                     </div>
-                    <div className="flex gap-3 items-center mb-7">
+                    <div className="mb-7 flex items-center gap-3">
                       <Circle />
                       <Input placeholder="Ссылка на LinkedIn" className="" />
                     </div>
-                    <div className="flex gap-3 items-center mb-7">
+                    <div className="mb-7 flex items-center gap-3">
                       <Circle />
                       <Input placeholder="Ссылка на Instagram" className="" />
                     </div>
-                    <div className="flex gap-3 items-center mb-7">
+                    <div className="mb-7 flex items-center gap-3">
                       <Circle />
                       <Input placeholder="Ссылка на HeadHunter" className="" />
                     </div>
