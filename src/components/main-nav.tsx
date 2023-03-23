@@ -87,10 +87,12 @@ export function MainNavigation() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+
+              {/* problem */}
+              <NavigationMenuItem >
                 <NavigationMenuTrigger>Аукционы</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px]  ">
+                  <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px]">
                     {components.map((component) => (
                       <ListItem
                         key={component.title}

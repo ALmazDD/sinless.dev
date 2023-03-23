@@ -26,8 +26,6 @@ export default function Auth() {
 
   const onSubmit: SubmitHandler<ValidationSchema> = (data) => data;
 
-  const { data: session } = useSession();
-
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
