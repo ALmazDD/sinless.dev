@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Inter } from "@next/font/google";
 import type { AppProps } from "next/app";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 const inter = Inter({

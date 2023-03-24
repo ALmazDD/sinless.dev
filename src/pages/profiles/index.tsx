@@ -38,7 +38,6 @@ export default function All() {
     <div>
       <div className="h-screen bg-slate-50">
         <MainNavigation />
-
         <div className="container mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профили</span>

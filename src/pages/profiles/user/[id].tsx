@@ -2,7 +2,7 @@ import { Mail, Power, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Test from "@/assets/testAva.jpg";
+import Test from "@/assets/testAva.png";
 import Badge from "@/assets/Vector.svg";
 import { MainNavigation } from "@/components/main-nav";
 import {

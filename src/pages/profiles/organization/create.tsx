@@ -38,10 +38,10 @@ export default function Create() {
                 <div className="flex flex-row flex-nowrap gap-10 overflow-x-auto md:w-full md:justify-around">
                   <TabsTrigger value="general">Общие данные</TabsTrigger>
                   <TabsTrigger value="job">Работа</TabsTrigger>
-                  <TabsTrigger value="degree">Образование</TabsTrigger>
                   <TabsTrigger value="sertification">
                     Сертефикаты и навыки
                   </TabsTrigger>
+                  <TabsTrigger value="addMaterial">Доп.материалы</TabsTrigger>
                   <TabsTrigger value="social">Соцсети</TabsTrigger>
                 </div>
               </TabsList>
@@ -65,16 +65,18 @@ export default function Create() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <Input placeholder="Cтрана" className=" " />
-                      <Input placeholder="Профессия" className="" />
+                      <Input placeholder="Название компании" className="" />
                       <Input placeholder="Город" className=" " />
-                      <Input placeholder="Сфера деятельности" className=" " />
+                      <Input placeholder="Отрасль" className=" " />
                     </div>
                   </div>
                   <div>
-                    <div className=" mb-5  text-2xl font-semibold">Обо мне</div>
+                    <div className=" mb-5  text-2xl font-semibold">
+                      О компании
+                    </div>
                     <Textarea
                       className="bg-slate-100"
-                      placeholder="Что будущему партнеру стоит о вас знать? Что вы умеете делать, что будет полезно другим людям?"
+                      placeholder="Что будущему партнеру стоит знать? Что  будет полезно другим людям?"
                     />
                   </div>
                 </TabsContent>
@@ -92,22 +94,11 @@ export default function Create() {
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <Input placeholder="Компания" className=" " />
-                      <Input placeholder="Должность" className="" />
                       <Input placeholder="Локация" className="" />
                       <div className="flex w-auto gap-3">
                         <Select>
                           <SelectTrigger className="">
-                            <SelectValue placeholder="Начало" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="light">Light</SelectItem>
-                            <SelectItem value="dark">Dark</SelectItem>
-                            <SelectItem value="system">System</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <Select>
-                          <SelectTrigger className="">
-                            <SelectValue placeholder="Конец" />
+                            <SelectValue placeholder="Дата основания" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="light">Light</SelectItem>
@@ -121,73 +112,8 @@ export default function Create() {
                   <div className="flex flex-col gap-4">
                     <Textarea
                       className="bg-slate-100"
-                      placeholder="Расскажите какие у вас были обязанности, какие задачи вы выполняли во время работы в компании?"
+                      placeholder="Расскажите кратко о вашей компании?"
                     />
-                    <Button variant="outline">
-                      <Plus /> Добавить место работы
-                    </Button>
-                  </div>
-                </TabsContent>
-              </div>
-
-              {/* degree */}
-              <div className="m-auto flex w-auto justify-center">
-                <TabsContent
-                  className=" h-[500px] w-[800px] border-none"
-                  value="degree"
-                >
-                  <div className="grid grid-cols-2 justify-between gap-20">
-                    <div>
-                      <div className=" mb-5  text-2xl font-semibold">
-                        Образование
-                      </div>
-                      <div className="flex flex-col gap-5">
-                        <Input placeholder="Локация" />
-                        <Input placeholder="Учебное завидение" />
-                        <Input placeholder="Специализация" />
-                        <Input placeholder="Степень" />
-                        <div className="flex w-auto gap-3">
-                          <Select>
-                            <SelectTrigger className="">
-                              <SelectValue placeholder="Начало" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="light">Light</SelectItem>
-                              <SelectItem value="dark">Dark</SelectItem>
-                              <SelectItem value="system">System</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <Select>
-                            <SelectTrigger className="">
-                              <SelectValue placeholder="Конец" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="light">Light</SelectItem>
-                              <SelectItem value="dark">Dark</SelectItem>
-                              <SelectItem value="system">System</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <Button variant="outline">
-                          <Plus /> Добавить место работы
-                        </Button>
-                      </div>
-                    </div>
-                    <div>
-                      <div className=" mb-5  text-2xl font-semibold">
-                        Повышение квалификации
-                      </div>
-
-                      <div className="flex flex-col gap-5">
-                        <Input placeholder="Организация" />
-                        <Input placeholder="Курс" />
-                        <Input placeholder="Специализация" />
-                        <Input placeholder="Год окончания" />
-                        <Button variant="outline">
-                          <Plus /> Добавить место работы
-                        </Button>
-                      </div>
-                    </div>
                   </div>
                 </TabsContent>
               </div>
@@ -195,10 +121,10 @@ export default function Create() {
               {/* sertification */}
               <div className="m-auto flex w-auto justify-center">
                 <TabsContent
-                  className=" h-[500px] w-[900px] border-none"
+                  className=" h-[500px] w-[600px] border-none"
                   value="sertification"
                 >
-                  <div className="grid grid-cols-2 justify-between gap-20">
+                  <div className="justify-between gap-20">
                     <div>
                       <div className=" mb-5  text-2xl font-semibold">
                         Сертификаты
@@ -221,15 +147,45 @@ export default function Create() {
                         </Button>
                       </div>
                     </div>
-                    <div>
-                      <div className=" mb-5  text-2xl font-semibold">
-                        Навыки
-                      </div>
+                  </div>
+                </TabsContent>
+              </div>
 
+              {/*additional material*/}
+
+              <div className="m-auto flex w-auto justify-center">
+                <TabsContent
+                  className=" h-[500px] w-[900px] border-none"
+                  value="addMaterial"
+                >
+                  <div className="grid grid-cols-2 justify-between gap-20">
+                    <div>
+                      <div className="mb-5">
+                        <p className="text-2xl font-semibold">Презентации</p>
+                        <p className="text-sm">Загрузите презентации</p>
+                      </div>
                       <div className="flex flex-col gap-5">
-                        <Input placeholder="Навык" />
+                        <div className="flex gap-5">
+                          <Input placeholder="Название презентации" />
+                          <Button variant="outline">
+                            <Paperclip className="rotate-90 -scale-y-100" />
+                          </Button>
+                        </div>
+
                         <Button variant="outline">
-                          <Plus /> Добавить навык
+                          <Plus /> Добавить Презентацию
+                        </Button>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="mb-5">
+                        <p className="text-2xl font-semibold">Видео</p>
+                        <p className="text-sm">Укажите ссылки на видеоролики</p>
+                      </div>
+                      <div className="flex flex-col gap-5">
+                        <Input placeholder="Ссылка на видео" />
+                        <Button variant="outline">
+                          <Plus /> Добавить видео
                         </Button>
                       </div>
                     </div>
@@ -244,8 +200,11 @@ export default function Create() {
                   value="social"
                 >
                   <div className="flex flex-col">
-                    <div className=" mb-5  text-2xl font-semibold">
-                      Социальные сети
+                    <div className=" mb-5  text-2xl">
+                      <p className="font-semibold">Социальные сети</p>
+                      <p className="text-sm">
+                        Укажите ссылки на аккаунты компании в социальных сетях
+                      </p>
                     </div>
                     <div className="mb-7 flex items-center gap-3">
                       <Circle />

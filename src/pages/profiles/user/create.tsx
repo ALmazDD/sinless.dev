@@ -17,7 +17,7 @@ export default function Create() {
     <>
       <div className="h-screen bg-slate-50">
         <MainNavigation />
-        <div className="container mx-auto max-w-screen-xl pt-8">
+        <div className="container mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профиль /</span>
             Создание профиля
@@ -26,7 +26,7 @@ export default function Create() {
           <div className="flex items-baseline justify-between">
             <h1 className="pt-7 text-5xl  font-extrabold	">{/* Профиль */}</h1>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 pt-4">
               <Button variant="subtle">Отмена</Button>
               <Button>Сохранить</Button>
             </div>
@@ -34,7 +34,7 @@ export default function Create() {
 
           <div className="rounded-lg bg-white shadow-sm">
             <Tabs defaultValue="general">
-              <TabsList className="mt-11  flex border border-slate-100 bg-white py-9">
+              <TabsList className="flex mt-5  border border-slate-100 bg-white py-9 sm:mt-11">
                 <div className="flex flex-row flex-nowrap gap-10 overflow-x-auto md:w-full md:justify-around">
                   <TabsTrigger value="general">Общие данные</TabsTrigger>
                   <TabsTrigger value="job">Работа</TabsTrigger>
@@ -63,7 +63,7 @@ export default function Create() {
                     <div className=" mb-5  text-2xl font-semibold">
                       Основаная информация о вас
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <Input placeholder="Cтрана" className=" " />
                       <Input placeholder="Профессия" className="" />
                       <Input placeholder="Город" className=" " />
@@ -90,7 +90,7 @@ export default function Create() {
                     <div className=" mb-5  text-2xl font-semibold">
                       Опыт работы
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <Input placeholder="Компания" className=" " />
                       <Input placeholder="Должность" className="" />
                       <Input placeholder="Локация" className="" />
@@ -136,7 +136,7 @@ export default function Create() {
                   className=" h-[500px] w-[800px] border-none"
                   value="degree"
                 >
-                  <div className="grid grid-cols-2 justify-between gap-20">
+                  <div className="grid justify-between gap-20 sm:grid-cols-2">
                     <div>
                       <div className=" mb-5  text-2xl font-semibold">
                         Образование
@@ -198,7 +198,7 @@ export default function Create() {
                   className=" h-[500px] w-[900px] border-none"
                   value="sertification"
                 >
-                  <div className="grid grid-cols-2 justify-between gap-20">
+                  <div className="grid justify-between gap-20 sm:grid-cols-2">
                     <div>
                       <div className=" mb-5  text-2xl font-semibold">
                         Сертификаты
