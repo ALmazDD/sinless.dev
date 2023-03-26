@@ -2,7 +2,7 @@ import { Mail, Power, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Test from "@/assets/testAva.jpg";
+import Test from "@/assets/testAva.png";
 import Badge from "@/assets/Vector.svg";
 import { MainNavigation } from "@/components/main-nav";
 import {
@@ -24,7 +24,7 @@ export default function View() {
   return (
     <div className="h-screen bg-slate-50">
       <MainNavigation />
-      <div className="container mx-auto max-w-screen-xl pt-7">
+      <div className="mx-auto max-w-screen-xl pt-7">
         <h1 className="text-sm">
           <span className="text-slate-300">Профиль / </span>
           Консультационные услуги

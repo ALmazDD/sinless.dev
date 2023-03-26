@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import Google from "@/assets/google.svg";
@@ -64,20 +65,22 @@ export default function Auth() {
                   Войти
                 </Button>
 
-                <Button
-                  onSubmit={handleSubmit(onSubmit)}
-                  type="submit"
-                  className="flex min-w-full items-center gap-2 text-xs md:text-sm"
-                  variant="outline"
-                >
-                  <Image
-                    src={Google}
-                    height={24}
-                    width={24}
-                    alt="google login"
-                  />
-                  Войти c Google
-                </Button>
+                <Link href="../profiles/user/create">
+                  <Button
+                    onSubmit={handleSubmit(onSubmit)}
+                    type="submit"
+                    className="flex min-w-full items-center gap-2 text-xs md:text-sm"
+                    variant="outline"
+                  >
+                    <Image
+                      src={Google}
+                      height={24}
+                      width={24}
+                      alt="google login"
+                    />
+                    Войти c Google
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

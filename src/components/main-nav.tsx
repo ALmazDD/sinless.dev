@@ -71,17 +71,37 @@ export function MainNavigation() {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex gap-5">
               <NavigationMenuItem className="flex gap-5">
-                <Link href="/projects/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Проекты
-                  </NavigationMenuLink>
-                </Link>
-                <Link href="/profiles/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Профиль
-                  </NavigationMenuLink>
-                </Link>
-                <Link href="/docs" legacyBehavior passHref>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-1 rounded-lg px-2 text-sm font-medium hover:bg-slate-100">
+                    <p>Проекты</p> <ChevronDown width={13} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      Мои проекты
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      Все проекты
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-1 rounded-lg px-2 text-sm font-medium hover:bg-slate-100">
+                    <p>Профили</p> <ChevronDown width={13} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      Мои профили
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      Все профили
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <Link href="/chats/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Чаты
                   </NavigationMenuLink>
@@ -89,9 +109,9 @@ export function MainNavigation() {
               </NavigationMenuItem>
 
               {/* problem */}
-              <NavigationMenuItem >
+              <NavigationMenuItem>
                 <NavigationMenuTrigger>Аукционы</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="">
                   <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px]">
                     {components.map((component) => (
                       <ListItem
@@ -134,11 +154,11 @@ export function MainNavigation() {
                       <AvatarImage src="https://github.com/shadcn.png" />
                     </Avatar>
                     <span className="text-sm font-medium">Алмаз Нургали</span>
-                    <ChevronDown />
+                    <ChevronDown width={13} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="min-w-[12rem]">
                     <DropdownMenuGroup>
-                      <DropdownMenuItem className=" font-sans text-sm text-slate-900">
+                      <DropdownMenuItem className="text-sm text-slate-900">
                         <Settings className="mr-2 h-4 w-4" />
                         <span>Настройки</span>
                       </DropdownMenuItem>

@@ -24,18 +24,18 @@ export default function View() {
   return (
     <div className="h-screen bg-slate-50">
       <MainNavigation />
-      <div className="mx-auto max-w-screen-xl px-5 pt-8">
+      <div className="container mx-auto max-w-screen-xl pt-7">
         <h1 className="text-sm">
           <span className="text-slate-300">Профиль / </span>
           Консультационные услуги
         </h1>
 
-        <div className="my-5 flex flex-col items-end justify-end gap-4 md:mb-16 md:flex-row md:items-baseline md:justify-between">
-          <h1 className="hidden pt-7 text-5xl font-extrabold md:flex">
+        <div className="mb-11 flex items-baseline justify-between">
+          <h1 className="pt-7 text-5xl  font-extrabold	">
             Консультационные услуги
           </h1>
 
-          <div className="flex gap-5">
+          <div className="flex gap-2">
             <Button className="bg-slate-700 hover:bg-black">
               Редактировать
             </Button>
@@ -63,8 +63,8 @@ export default function View() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-10 ">
-          <div className="sm:col-span-3">
+        <div className="grid grid-cols-10 gap-4 ">
+          <div className="col-span-3">
             <div className="h-full bg-white px-6">
               <div className="flex flex-col items-center justify-center pt-12">
                 <Image
@@ -118,25 +118,23 @@ export default function View() {
             </div>
           </div>
 
-          <div className="bg-white sm:col-span-7">
+          <div className="col-span-7 bg-white">
             <div className="bg-white">
               <Tabs defaultValue="job" className="">
                 <TabsList className="flex justify-around border border-slate-100 bg-white py-9 text-lg font-semibold text-slate-300">
-                  <div className="flex flex-row flex-nowrap gap-10 overflow-x-auto md:w-full md:justify-around">
-                    <TabsTrigger value="job">Опыт работы</TabsTrigger>
-                    <TabsTrigger value="degree">Образование</TabsTrigger>
-                    <TabsTrigger value="sertification">
-                      Сертификаты и навыки
-                    </TabsTrigger>
-                    <TabsTrigger value="social">Проекты</TabsTrigger>
-                  </div>
+                  <TabsTrigger value="job">Опыт работы</TabsTrigger>
+                  <TabsTrigger value="degree">Образование</TabsTrigger>
+                  <TabsTrigger value="sertification">
+                    Сертификаты и навыки
+                  </TabsTrigger>
+                  <TabsTrigger value="social">Проекты</TabsTrigger>
                 </TabsList>
 
                 {/* job experience */}
                 <div className="flex justify-center">
                   <TabsContent className="w-full border-none" value="job">
-                    <div className="grid gap-8 sm:grid-cols-10">
-                      <div className="sm:col-span-2">
+                    <div className="grid grid-cols-10 gap-8">
+                      <div className="col-span-2">
                         <div className="flex flex-col gap-1.5">
                           <p className=" text-lg font-semibold">
                             Апрель, 2022 - по настоящее время
@@ -144,7 +142,7 @@ export default function View() {
                           <p className="text-sm text-slate-400">11 месяцев</p>
                         </div>
                       </div>
-                      <div className="sm:col-span-8">
+                      <div className="col-span-8">
                         <div>
                           <p className=" text-lg font-semibold">ht.kz</p>
                           <p className=" mb-3 text-sm font-normal">Astana</p>
@@ -163,8 +161,8 @@ export default function View() {
                       </div>
                     </div>
                     <Separator className=" mt-4 mb-6" />
-                    <div className="grid gap-8 sm:grid-cols-10">
-                      <div className="sm:col-span-2">
+                    <div className="grid grid-cols-10 gap-8">
+                      <div className="col-span-2">
                         <div className="flex flex-col gap-1.5">
                           <p className=" text-lg font-semibold">
                             Апрель, 2022 - по настоящее время
@@ -172,7 +170,7 @@ export default function View() {
                           <p className="text-sm text-slate-400">11 месяцев</p>
                         </div>
                       </div>
-                      <div className="sm:col-span-8">
+                      <div className="col-span-8">
                         <div>
                           <p className=" text-lg font-semibold">ht.kz</p>
                           <p className=" mb-3 text-sm font-normal">Astana</p>

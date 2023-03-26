@@ -34,7 +34,7 @@ export default function Create() {
 
           <div className="rounded-lg bg-white shadow-sm">
             <Tabs defaultValue="general">
-              <TabsList className="flex mt-5  border border-slate-100 bg-white py-9 sm:mt-11">
+              <TabsList className="mt-5 flex border border-slate-100 bg-white py-9 sm:mt-11">
                 <div className="flex flex-row flex-nowrap gap-10 overflow-x-auto md:w-full md:justify-around">
                   <TabsTrigger value="general">Общие данные</TabsTrigger>
                   <TabsTrigger value="job">Работа</TabsTrigger>

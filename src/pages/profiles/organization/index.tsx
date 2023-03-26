@@ -4,7 +4,6 @@ import Link from "next/link";
 import AnalyzingMarket from "@/assets/analyzingMarket.svg";
 import OnLaptop from "@/assets/onLaptop.svg";
 import { MainNavigation } from "@/components/main-nav";
-import { NoProfiles } from "@/components/profiles/no-profiles";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

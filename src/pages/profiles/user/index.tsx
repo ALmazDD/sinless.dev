@@ -21,13 +21,13 @@ export default function All() {
     <>
       <div className="h-screen bg-slate-50">
         <MainNavigation />
-        <div className="container mx-auto max-w-screen-xl px-5 pt-8">
+        <div className="mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профили </span>
           </h1>
           <div className="mb-16 flex items-baseline justify-between">
             <h1 className="pt-7 text-5xl  font-extrabold">
-              <p className="hidden sm:flex">Закупки</p>
+              <p className="hidden sm:flex">Профили</p>
             </h1>
 
             <Dialog>
