@@ -127,7 +127,7 @@ export default function View() {
                   <TabsTrigger value="sertification">
                     Сертификаты и навыки
                   </TabsTrigger>
-                  <TabsTrigger value="social">Проекты</TabsTrigger>
+                  <TabsTrigger value="projects">Проекты</TabsTrigger>
                 </TabsList>
 
                 {/* job experience */}
@@ -292,13 +292,16 @@ export default function View() {
                   </TabsContent>
                 </div>
 
-                {/* social */}
+                {/* projects */}
                 <div className="m-auto flex w-auto justify-center">
                   <TabsContent
                     className="h-[500px] w-[700px] border-none "
-                    value="social"
+                    value="projects"
                   >
-                    <div className="flex flex-col" />
+                    <div className="grid grid-cols-10 gap-4">
+                      <div className="col-span-3">some</div>
+                      <div className="col-span-7">some</div>
+                    </div>
                   </TabsContent>
                 </div>
               </Tabs>

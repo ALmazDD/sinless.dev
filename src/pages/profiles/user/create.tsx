@@ -1,4 +1,11 @@
-import { Circle, Paperclip, Plus } from "lucide-react";
+import {
+  Circle,
+  Instagram,
+  Linkedin,
+  Paperclip,
+  Plus,
+  Send,
+} from "lucide-react";
 import { MainNavigation } from "@/components/main-nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -243,25 +250,29 @@ export default function Create() {
                   className="h-[500px] w-[700px] border-none "
                   value="social"
                 >
-                  <div className="flex flex-col">
-                    <div className=" mb-5  text-2xl font-semibold">
-                      Социальные сети
+                  <div className="m-auto flex max-w-[330px] flex-col gap-3">
+                    <div>
+                      <div className="mb-5 text-2xl font-semibold">
+                        Социальные сети
+                      </div>
+                      <p className="whitespace-nowrap">
+                        Укажите ссылки на ваши аккаунты в социальных сетях
+                      </p>
                     </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на Telegram" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на LinkedIn" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на Instagram" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на HeadHunter" className="" />
+
+                    <div className="">
+                      <div className="mb-7 flex items-center gap-3">
+                        <Send />
+                        <Input placeholder="Ссылка на Telegram" className="" />
+                      </div>
+                      <div className="mb-7 flex items-center gap-3">
+                        <Linkedin />
+                        <Input placeholder="Ссылка на LinkedIn" className="" />
+                      </div>
+                      <div className="mb-7 flex items-center gap-3">
+                        <Instagram />
+                        <Input placeholder="Ссылка на Instagram" className="" />
+                      </div>
                     </div>
                   </div>
                 </TabsContent>
