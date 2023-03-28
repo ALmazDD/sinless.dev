@@ -252,10 +252,10 @@ export default function Create() {
                 >
                   <div className="m-auto flex max-w-[330px] flex-col gap-3">
                     <div>
-                      <div className="mb-5 text-2xl font-semibold">
+                      <div className="mb-3 text-2xl font-semibold">
                         Социальные сети
                       </div>
-                      <p className="whitespace-nowrap">
+                      <p className="text-xs sm:whitespace-nowrap sm:text-sm">
                         Укажите ссылки на ваши аккаунты в социальных сетях
                       </p>
                     </div>

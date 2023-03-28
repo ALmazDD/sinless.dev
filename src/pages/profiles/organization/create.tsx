@@ -1,4 +1,11 @@
-import { Circle, Paperclip, Plus } from "lucide-react";
+import {
+  Globe,
+  Instagram,
+  Linkedin,
+  Paperclip,
+  Plus,
+  Send,
+} from "lucide-react";
 import { MainNavigation } from "@/components/main-nav";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,7 +24,7 @@ export default function Create() {
     <>
       <div className="h-screen bg-slate-50">
         <MainNavigation />
-        <div className="container mx-auto max-w-screen-xl pt-8">
+        <div className="ms:px-0 container mx-auto max-w-screen-xl px-5 pt-8">
           <h1 className="text-sm">
             <span className="text-slate-300">Профиль /</span>
             Создание профиля
@@ -158,7 +165,7 @@ export default function Create() {
                   className=" h-[500px] w-[900px] border-none"
                   value="addMaterial"
                 >
-                  <div className="grid grid-cols-2 justify-between gap-20">
+                  <div className="grid justify-between gap-20 sm:grid-cols-2">
                     <div>
                       <div className="mb-5">
                         <p className="text-2xl font-semibold">Презентации</p>
@@ -199,28 +206,33 @@ export default function Create() {
                   className="h-[500px] w-[700px] border-none "
                   value="social"
                 >
-                  <div className="flex flex-col">
-                    <div className=" mb-5  text-2xl">
-                      <p className="font-semibold">Социальные сети</p>
-                      <p className="text-sm">
-                        Укажите ссылки на аккаунты компании в социальных сетях
+                  <div className="m-auto flex max-w-[330px] flex-col gap-3">
+                    <div>
+                      <div className="mb-3 text-2xl font-semibold">
+                        Социальные сети
+                      </div>
+                      <p className="text-xs sm:whitespace-nowrap sm:text-sm">
+                        Укажите ссылки на ваши аккаунты в социальных сетях
                       </p>
                     </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на Telegram" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на LinkedIn" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на Instagram" className="" />
-                    </div>
-                    <div className="mb-7 flex items-center gap-3">
-                      <Circle />
-                      <Input placeholder="Ссылка на HeadHunter" className="" />
+
+                    <div className="">
+                      <div className="mb-7 flex items-center gap-3">
+                        <Send />
+                        <Input placeholder="Ссылка на Telegram" className="" />
+                      </div>
+                      <div className="mb-7 flex items-center gap-3">
+                        <Linkedin />
+                        <Input placeholder="Ссылка на LinkedIn" className="" />
+                      </div>
+                      <div className="mb-7 flex items-center gap-3">
+                        <Instagram />
+                        <Input placeholder="Ссылка на Instagram" className="" />
+                      </div>
+                      <div className="mb-7 flex items-center gap-3">
+                        <Globe />
+                        <Input placeholder="Ссылка на Вебсайт" className="" />
+                      </div>
                     </div>
                   </div>
                 </TabsContent>

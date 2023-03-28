@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { useState } from "react";
 import { useQuery } from "react-query";
+import NoProfile from "@/assets/noProfiles.svg";
 import Techno from "@/assets/techno.svg";
 import TestAva from "@/assets/testAva.png";
 import { MainNavigation } from "@/components/main-nav";
@@ -19,6 +20,8 @@ import { Separator } from "@/components/ui/separator";
 import useDebounce from "@/hooks/use-debounce";
 
 export default function All() {
+  const isTrue = false;
+
   const [search, setSearch] = useState("");
 
   const debouncedSearchTerm = useDebounce(search, 1000);
@@ -70,65 +73,73 @@ export default function All() {
               </Button>
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div className=" rounded-2xl border border-slate-200 bg-white">
-              <div className="p-4">
-                <div className="grid w-full grid-cols-10 gap-4">
-                  <div className="col-span-2">
-                    <Image src={Techno} alt="test" />
-                  </div>
-                  <div className="col-span-8 flex flex-col gap-1">
-                    <div className="flex justify-between">
-                      <p className="text-xs font-semibold sm:text-base">
-                        Техно пространство
-                      </p>
-                      <div className="flex items-center gap-4 text-xs text-slate-400 sm:text-sm">
-                        <p>26.06.2023</p>
-                        <p className="flex items-center gap-1 text-sm">
-                          <Eye /> 17
+
+          {isTrue ? (
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div className=" rounded-2xl border border-slate-200 bg-white">
+                <div className="p-4">
+                  <div className="grid w-full grid-cols-10 gap-4">
+                    <div className="col-span-2">
+                      <Image src={Techno} alt="test" />
+                    </div>
+                    <div className="col-span-8 flex flex-col gap-1">
+                      <div className="flex justify-between">
+                        <p className="text-xs font-semibold sm:text-base">
+                          Техно пространство
+                        </p>
+                        <div className="flex items-center gap-4 text-xs text-slate-400 sm:text-sm">
+                          <p>26.06.2023</p>
+                          <p className="flex items-center gap-1 text-sm">
+                            <Eye /> 17
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex justify-between">
+                        <p className="max-w-[300px] text-xs sm:text-sm">
+                          производство одежды, текстильных изделий, обуви
+                        </p>
+                        <p className="flex items-center rounded-2xl bg-lime-500 py-1 px-2 text-[9px] font-bold text-slate-100 sm:text-xs">
+                          в ТОПе
                         </p>
                       </div>
-                    </div>
-                    <div className="flex justify-between">
-                      <p className="max-w-[300px] text-xs sm:text-sm">
-                        производство одежды, текстильных изделий, обуви
-                      </p>
-                      <p className="flex items-center rounded-2xl bg-lime-500 py-1 px-2 text-[9px] font-bold text-slate-100 sm:text-xs">
-                        в ТОПе
-                      </p>
-                    </div>
-                    <div className="mt-2 flex gap-4 text-xs">
-                      <div className="flex w-fit items-center gap-4 rounded-xl bg-slate-100 p-2">
-                        <Image
-                          src={TestAva}
-                          alt="test"
-                          width={20}
-                          height={20}
-                          className="rounded-lg "
-                        />
-                        <p className="text-xs sm:text-sm">Сара Алтыбекова</p>
-                      </div>
-                      <div className="flex w-fit items-center gap-2 rounded-xl bg-slate-100 p-2">
-                        <MessageSquare width={20} height={20} /> Чат проекта
+                      <div className="mt-2 flex gap-4 text-xs">
+                        <div className="flex w-fit items-center gap-4 rounded-xl bg-slate-100 p-2">
+                          <Image
+                            src={TestAva}
+                            alt="test"
+                            width={20}
+                            height={20}
+                            className="rounded-lg "
+                          />
+                          <p className="text-xs sm:text-sm">Сара Алтыбекова</p>
+                        </div>
+                        <div className="flex w-fit items-center gap-2 rounded-xl bg-slate-100 p-2">
+                          <MessageSquare width={20} height={20} /> Чат проекта
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <Separator className="my-6" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <Button className="rounded-full bg-lime-100 py-1.5 px-2">
-                      <Star className="text-lime-500" />
+                  <Separator className="my-6" />
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <Button className="rounded-full bg-lime-100 py-1.5 px-2">
+                        <Star className="text-lime-500" />
+                      </Button>
+                      <p className="text-xs sm:text-sm">Добавить в избранное</p>
+                    </div>
+                    <Button className="rounded-full bg-slate-300 py-1.5 px-2 hover:bg-black">
+                      <ChevronRight />
                     </Button>
-                    <p className="text-xs sm:text-sm">Добавить в избранное</p>
                   </div>
-                  <Button className="rounded-full bg-slate-300 py-1.5 px-2 hover:bg-black">
-                    <ChevronRight />
-                  </Button>
                 </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center gap-8">
+              <Image src={NoProfile} alt="Нет профилей" />
+              <p className=" text-2xl font-semibold">У вас нет проектов</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
