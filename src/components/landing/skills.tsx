@@ -10,46 +10,52 @@ import {
 
 const actions = [
   {
-    title: "Request time off",
-    href: "#",
+    title: "Simple sell page with email connection",
+    href: "https://alibaba.kz",
     icon: ClockIcon,
     iconForeground: "text-teal-700",
     iconBackground: "bg-teal-50",
+    text: "That project have been created by React.js, Tailwind UI framework, Vite project bundler, Email.js",
   },
   {
-    title: "Benefits",
-    href: "#",
+    title: "Company landing page",
+    href: "https://clubbie.club",
     icon: BadgeCheckIcon,
     iconForeground: "text-purple-700",
     iconBackground: "bg-purple-50",
+    text: "That project have been created by Next.js, Tailwind UI framework, Vite project bundler, Framer motion library, Email.js",
   },
   {
-    title: "Schedule a one-on-one",
-    href: "#",
+    title: "Fin-tech company",
+    href: "https://limpid.kz",
     icon: UsersIcon,
     iconForeground: "text-sky-700",
     iconBackground: "bg-sky-50",
+    text: "That project is build by React.js, Redux-tool-kit state manager, Material UI and Ant Design, and axios for fetching. For backend Express.js and PorstgreSql",
   },
   {
-    title: "Payroll",
-    href: "#",
+    title: "Documentolog",
+    href: "https://Documentolog.com",
     icon: CashIcon,
     iconForeground: "text-yellow-700",
     iconBackground: "bg-yellow-50",
+    text: "In this project in which i participated, i used Angular, React.js, Material UI, Typescript, Styled Components",
   },
   {
-    title: "Submit an expense",
-    href: "#",
+    title: "Morrison code",
+    href: "https://www.instagram.com/morrison_code/",
     icon: ReceiptRefundIcon,
     iconForeground: "text-rose-700",
     iconBackground: "bg-rose-50",
+    text: "I worked here as a teacher for some time React.js and gold three",
   },
   {
-    title: "Training",
-    href: "#",
+    title: "BI Group",
+    href: "https://bi.group/",
     icon: AcademicCapIcon,
     iconForeground: "text-indigo-700",
     iconBackground: "bg-indigo-50",
+    text: "In this company projects in which i participated, i used React.js/Next.js , Material UI, Typescript, Styled Components",
   },
 ];
 
@@ -57,9 +63,9 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function Example() {
+export function Skills() {
   return (
-    <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+    <div className="m-auto mt-8 max-w-[80%] divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow sm:grid sm:grid-cols-3 sm:gap-px sm:divide-y-0">
       {actions.map((action, actionIdx) => (
         <div
           key={action.title}
@@ -67,12 +73,12 @@ export function Example() {
             actionIdx === 0
               ? "rounded-tl-lg rounded-tr-lg sm:rounded-tr-none"
               : "",
-            actionIdx === 1 ? "sm:rounded-tr-lg" : "",
+            actionIdx === 1 ? "" : "",
             actionIdx === actions.length - 2 ? "sm:rounded-bl-lg" : "",
             actionIdx === actions.length - 1
               ? "rounded-bl-lg rounded-br-lg sm:rounded-bl-none"
               : "",
-            "relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+            "relative group bg-slate-100 p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
           )}
         >
           <div>
@@ -86,18 +92,18 @@ export function Example() {
               <action.icon className="h-6 w-6" aria-hidden="true" />
             </span>
           </div>
-          <div className="mt-8">
+          <div className="mt-4">
             <h3 className="text-lg font-medium">
-              <a href={action.href} className="focus:outline-none">
-                {/* Extend touch target to entire panel */}
+              <a
+                href={action.href}
+                target="_blank"
+                className="focus:outline-none"
+              >
                 <span className="absolute inset-0" aria-hidden="true" />
                 {action.title}
               </a>
             </h3>
-            <p className="mt-2 text-sm text-gray-500">
-              Doloribus dolores nostrum quia qui natus officia quod et dolorem.
-              Sit repellendus qui ut at blanditiis et quo et molestiae.
-            </p>
+            <p className="mt-2 text-sm text-gray-500">{action.text}</p>
           </div>
           <span
             className="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
