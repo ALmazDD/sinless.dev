@@ -1,255 +1,159 @@
-"use client";
-
-import {
-  Bell,
-  Briefcase,
-  ChevronDown,
-  Gavel,
-  Landmark,
-  LogOut,
-  Mails,
-  Menu,
-  Settings,
-  Star,
-  User,
-} from "lucide-react";
+/* This example requires Tailwind CSS v2.0+ */
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
-import * as React from "react";
-import Logo from "@/assets/logo.svg";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils/cn";
-import { Separator } from "./ui/separator";
+import { Fragment } from "react";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Аукционы",
-    href: "/docs/primitives/alert-dialog",
-    description: "Продаете за сумму поставщик дает свою ценну более ниже",
-  },
-  {
-    title: "Тендера",
-    href: "/auctions/procurement",
-    description: "На закупках вы выставляете лот и продаете чем дороже",
-  },
-];
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 export function MainNavigation() {
   return (
     <>
-      <div className=" h-20 border border-b-2 border-slate-100 bg-white	">
-        <div className="m-auto flex h-full max-w-[95%] items-center justify-between">
-          <Link
-            href="/"
-            className="flex flex-col gap-3 sm:flex-row sm:items-end"
-          >
-            <Image src={Logo} className="h-6 w-fit md:h-10" alt="logo" />
-            <p className="hidden w-32 text-[7px] text-slate-500 dark:text-slate-400 md:flex md:w-56 md:text-xs">
-              Инструмент для предпринимателей по поиску и работе с партнёрами
-            </p>
-          </Link>
-
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList className="flex gap-5">
-              <NavigationMenuItem className="flex gap-5">
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-1 rounded-lg px-2 text-sm font-medium hover:bg-slate-100">
-                    <p>Проекты</p> <ChevronDown width={13} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Мои проекты
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Все проекты
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-1 rounded-lg px-2 text-sm font-medium hover:bg-slate-100">
-                    <p>Профили</p> <ChevronDown width={13} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Мои профили
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      Все профили
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-                <Link href="/chats/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Чаты
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              {/* problem */}
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Аукционы</NavigationMenuTrigger>
-                <NavigationMenuContent className="">
-                  <ul className="grid w-[200px] gap-3 p-4 md:w-[300px] lg:w-[400px]">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-
-          <div className="flex h-full">
-            <div className="flex gap-2 md:gap-4  ">
-              <Separator orientation="vertical" />
-              <div className="flex h-auto items-center justify-center">
-                <Button variant="ghost">
-                  <Link href="/">
-                    <Star />
-                  </Link>
-                </Button>
-              </div>
-              <Separator orientation="vertical" />
-              <div className="flex h-auto items-center justify-center">
-                <Button variant="ghost">
-                  <Link href="/">
-                    <Bell />
-                  </Link>
-                </Button>
-              </div>
-              <Separator orientation="vertical" />
-              <div className="hidden lg:flex">
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-3">
-                    <Avatar>
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                    </Avatar>
-                    <span className="text-sm font-medium">Алмаз Нургали</span>
-                    <ChevronDown width={13} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="min-w-[12rem]">
-                    <DropdownMenuGroup>
-                      <DropdownMenuItem className="text-sm text-slate-900">
-                        <Settings className="mr-2 h-4 w-4" />
-                        <span>Настройки</span>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <LogOut className="mr-2 h-4 w-4" />
-                        <span>Выйти</span>
-                      </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
-              <div className="flex h-auto items-center justify-center">
-                <DropdownMenu>
-                  <DropdownMenuTrigger className="lg:hidden" asChild>
-                    <Button variant="outline">
-                      <Menu width={18} height={12} />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <div>
-                    <DropdownMenuContent className="w-56 lg:hidden">
-                      <DropdownMenuItem>
-                        <Settings className="mr-2 h-4 w-4" />
-                        <span>Настройки</span>
-                      </DropdownMenuItem>
-                      <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                          <Briefcase className="mr-2 h-4 w-4" />
-                          <span>Проекты</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <User className="mr-2 h-4 w-4" />
-                          <span>Профиль</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                          <Mails className="mr-2 h-4 w-4" />
-                          <span>Чаты</span>
-                        </DropdownMenuItem>
-                        <DropdownMenuGroup>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuLabel>Аукционы</DropdownMenuLabel>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem>
-                            <Landmark className="mr-2 h-4 w-4" />
-                            <span>Продажи</span>
-                          </DropdownMenuItem>
-                          <DropdownMenuItem>
-                            <Gavel className="mr-2 h-4 w-4" />
-                            <span>Торги</span>
-                          </DropdownMenuItem>
-                        </DropdownMenuGroup>
-                      </DropdownMenuGroup>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>
-                        <LogOut className="mr-2 h-4 w-4" />
-                        <span>Выйти</span>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
+      <Disclosure as="nav" className="bg-white shadow">
+        {({ open }) => (
+          <>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex h-16 justify-between">
+                <div className="flex">
+                  <div className="flex shrink-0 items-center text-lg font-black">
+                    SINLESS
                   </div>
-                </DropdownMenu>
+                  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <Link
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    >
+                      Team
+                    </Link>
+                    <Link
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    >
+                      Projects
+                    </Link>
+                    <Link
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    >
+                      Calendar
+                    </Link>
+                  </div>
+                </div>
+                <div className="hidden sm:ml-6 sm:flex sm:items-center">
+                  {/* Profile dropdown */}
+                  <Menu as="div" className="relative ml-3">
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-200"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              href="#"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Your Profile
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              href="#"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Settings
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              href="#"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Sign out
+                            </Link>
+                          )}
+                        </Menu.Item>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
+                </div>
+                <div className="-mr-2 flex items-center sm:hidden">
+                  {/* Mobile menu button */}
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+
+            <Disclosure.Panel className="sm:hidden">
+              <div className="space-y-1 pt-2 pb-3">
+                {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+                <Disclosure.Button
+                  as="a"
+                  href="#"
+                  className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
+                >
+                  Dashboard
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#"
+                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                >
+                  Team
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#"
+                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                >
+                  Projects
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="#"
+                  className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                >
+                  Calendar
+                </Disclosure.Button>
+              </div>
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
     </>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-slate-700 dark:focus:bg-slate-700",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="text-sm leading-snug text-slate-500 line-clamp-2 dark:text-slate-400">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

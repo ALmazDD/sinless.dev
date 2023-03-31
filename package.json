@@ -9,6 +9,8 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^1.0.6",
     "@hookform/resolvers": "^2.9.11",
     "@next/font": "^13.1.6",
     "@radix-ui/react-alert-dialog": "^1.0.3",
@@ -23,6 +25,7 @@
     "@types/react-dom": "18.0.11",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
+    "heroicons": "^2.0.17",
     "lucide-react": "^0.124.0",
     "next": "13.1.6",
     "react": "18.2.0",
