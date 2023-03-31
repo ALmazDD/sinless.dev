@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
