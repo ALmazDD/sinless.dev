@@ -3,6 +3,7 @@ import { ExternalLinkIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export function Banner() {
   return (
     <div className="relative m-auto mt-8 max-w-[80%] rounded-lg bg-gray-800">
@@ -12,7 +13,7 @@ export function Banner() {
           className="h-full w-full rounded-l-xl object-cover"
         />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="relative  mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="md:ml-auto md:w-1/2 md:pl-10">
           <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
             Web engineer
