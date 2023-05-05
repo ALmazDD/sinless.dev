@@ -52,6 +52,18 @@ export function MainNavigation() {
                     >
                       Table
                     </Link>
+                    <Link
+                      href="/chat"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    >
+                      Table
+                    </Link>
+                    <Link
+                      href="/timer"
+                      className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    >
+                      Table
+                    </Link>
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:items-center">
